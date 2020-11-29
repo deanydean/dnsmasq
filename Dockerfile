@@ -11,11 +11,11 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Add the files to the image
-ADD ./etc/default-dnsmasq.conf /opt/dnsmasq/dnsmasq.conf
-ADD ./etc/default-resolv.conf /opt/dnsmasq/etc/resolv.conf
-ADD ./etc/default-hosts.conf /opt/dnsmasq/hosts.d/default-hosts.conf
-ADD ./etc/default-dhcp-opts.conf /opt/dnsmasq/dhcp.opts.d/default-opts.conf
-ADD ./etc/default-dhcp-hosts.conf /opt/dnsmasq/dhcp.hosts.d/default-hosts.conf
+ADD ./etc/default-dnsmasq.conf /srv/dnsmasq/dnsmasq.conf
+ADD ./etc/default-resolv.conf /srv/dnsmasq/etc/resolv.conf
+ADD ./etc/default-hosts.conf /srv/dnsmasq/hosts.d/default-hosts.conf
+ADD ./etc/default-dhcp-opts.conf /srv/dnsmasq/dhcp.opts.d/default-opts.conf
+ADD ./etc/default-dhcp-hosts.conf /srv/dnsmasq/dhcp.hosts.d/default-hosts.conf
 
 # Expose DNS ports
 EXPOSE 53
@@ -26,7 +26,6 @@ EXPOSE 67
 EXPOSE 67/udp
 EXPOSE 68
 EXPOSE 68/udp
-
 
 VOLUME /data
 

@@ -2,11 +2,11 @@
 # Run dnsmasq in the container 
 set -o errexit -o nounset -o pipefail
 
-: ${DNSMASQ_CONF:="/opt/dnsmasq/dnsmasq.conf"}
-: ${HOSTS_D_PATH:="/opt/dnsmasq/hosts.d"}
-: ${DHCP_HOSTS_D_PATH:="/opt/dnsmasq/dhcp.hosts.d"}
-: ${DHCP_OPTS_D_PATH:="/opt/dnsmasq/dhcp.opts.d"}
-: ${RESOLV_CONF:="/opt/dnsmasq/etc/resolv.conf"}
+: ${DNSMASQ_CONF:="/srv/dnsmasq/dnsmasq.conf"}
+: ${HOSTS_D_PATH:="/srv/dnsmasq/hosts.d"}
+: ${DHCP_HOSTS_D_PATH:="/srv/dnsmasq/dhcp.hosts.d"}
+: ${DHCP_OPTS_D_PATH:="/srv/dnsmasq/dhcp.opts.d"}
+: ${RESOLV_CONF:="/srv/dnsmasq/etc/resolv.conf"}
 
 echo "Starting dnsmasq...."
 /usr/sbin/dnsmasq --user=root --no-daemon \
