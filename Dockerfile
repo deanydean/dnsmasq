@@ -1,7 +1,6 @@
 #!/usr/bin/docker build
 # Dockerfile for dnsmasq
 
-# Based on Debian 9
 FROM debian:10
 
 # Set up the system
