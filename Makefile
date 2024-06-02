@@ -10,5 +10,6 @@ build:
 
 run: build
 	docker run --rm -it \
-		-p 53:53/tcp -p 53:53/udp -p 67:67/udp -p 68:68/udp \
+		--cap-add CAP_NET_ADMIN --cap-add CAP_NET_RAW \
+		-p 15353:53/tcp -p 15353:53/udp -p 16767:67/udp -p 16868:68/udp \
 		$(IMAGE_NAME):$(IMAGE_TAG)

@@ -1,7 +1,7 @@
 #!/usr/bin/docker build
 # Dockerfile for dnsmasq
 
-FROM debian:10
+FROM debian:12
 
 # Set up the system
 RUN apt-get update && \
